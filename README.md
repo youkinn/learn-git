@@ -28,3 +28,7 @@
 
 - git mv index.html index2.html
 > 将index.html重命名为index2.html.
+
+##### 放弃更改
+- git checkout -- index.html
+- 其实就是放弃更改(慎用).
