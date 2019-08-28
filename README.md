@@ -42,7 +42,8 @@
 
 ##### 重命名
 - git mv index.html index2.html
-> 将index.html重命名为index2.html. 疑问: 重命名后如何用git log查看历史记录
+> 将index.html重命名为index2.html. 
+> 重命名git log --follow index2.html 来查看历史记录
 
 ##### 放弃更改
 - git checkout -- index.html
