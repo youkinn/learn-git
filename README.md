@@ -4,35 +4,53 @@
 - git config user.name "youkinn2"
 - git config user.email "03338277@163.com"
 
-##### 代码拷贝
-- git clone https://github.com/youkinn/learn-git.git
-- 从远程拷贝代码
+##### 创建仓库
+1. git clone https://github.com/youkinn/learn-git.git
+> 从远程拷贝代码
+
+2. git init
+> 在现有目录中初始化仓库
 
 ##### 查看变更日志
 - git log
-> git log 命令会产生版本库里乙烯利单独提交的历史.
+> git log 命令会产生版本库里单独提交的历史.
 > 使用 --oneline只显示一行的简洁信息.
 
-##### 查看变更
+##### 检查当前文件状态
 - git status
-> 查看当前暂存的更改(如果没有显示 "nothing to commit, working tree clean").
+> 查看当前更改(如果没有显示 "nothing to commit, working tree clean").
 
-##### 查看暂存的文件
-- git ls-files --stage/-s
+- 文件按状态分为2种: 未追踪和已追踪. 已追踪文件状态分未修改、已修改以及已暂存.
+1. 未追踪(untracked)
+2. 已追踪
+    - 未修改(unmodified)
+    - 已修改(modified)
+    - 已暂存(staged)
  
-##### 添加/取消暂存
+##### 暂存更改/取消暂存
 - git add index.html
 > 将index.html添加到版本库里边.
 
 - git add .
 > git log 把当前目录及其子目录的文件都添加到版本库里边.
 
+- git reset HEAD -- index.html
+- 将文件从缓冲区移除
+
+##### 放弃更改
+- git checkout -- index.html
+
+
+##### 删除文件
 - git rm --cached index.html
 > 删除索引中的文件并把它保留在工作目录中. 与git reset HEAD filename区别?
 
 - git rm index.html
 > 将文件从索引和工作目录都删除. 删除前如果对文件有编辑过, 删除会失败. 可以添加-f参数强制删除.
 > 不小心误删后, 可以使用 git checkout HEAD -- index.html 恢复.
+
+##### 查看暂存的文件
+- git ls-files --stage/-s
 
 ###### 提交
 - git commit -m "message"
