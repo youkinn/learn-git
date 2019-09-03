@@ -62,9 +62,12 @@
 
 ##### 标签
 - git tag init 0d7f482
-> init是tag的名称, 可以是通常是某次上线或者其他重要节点. 
+> 为某次提交创建一个tag. init是tag的名称, 可以是通常是某次上线或者其他重要节点. 
 > fa04c30是一次提交的散列值的前7位
+
+- git tag
 > tag其实就是散列值的别名，一旦设置了tag之后，就可以通过git tag命令查看所有的tag.
+
 > 通过git show init 查看此次提交的内容(等同git show 0d7f482).
 
 
