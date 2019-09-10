@@ -27,38 +27,27 @@
     - 已修改(modified)
     - 已暂存(staged)
  
-##### 暂存更改
-- git add <file>
-> 单文件
+##### 暂存更改/取消暂存
+- git add index.html
+> 将index.html添加到版本库里边.
 
-- git add . 或者 git add <file> [<file2>]
-> 暂存所有更改：把当前目录及其子目录的文件都添加到版本库里边.
+- git add .
+> git log 把当前目录及其子目录的文件都添加到版本库里边.
 
-##### 取消暂存修改
-- git reset HEAD -- [<file>]
-> 单文件
-
-- git reset HEAD --
-> 如果没有指定文件，则取消暂存所有修改
+- git reset HEAD -- index.html
+- 将文件从缓冲区移除
 
 ##### 放弃更改
-- git checkout -- <file>
-> 单文件
+- git checkout -- index.html
 
-- git checkout . 或者 git checkout -- <file1> [<file2>]
-> 放弃所有更改 (缓冲区的文件不受影响)
 
 ##### 删除文件
 - git rm --cached index.html
-> 删除索引中的文件并把它保留在工作目录中.
+> 删除索引中的文件并把它保留在工作目录中. 与git reset HEAD filename区别?
 
 - git rm index.html
 > 将文件从索引和工作目录都删除. 删除前如果对文件有编辑过, 删除会失败. 可以添加-f参数强制删除.
-
-##### 重命名
-- git mv index.html index2.html
-> 将index.html重命名为index2.html. 
-> 重命名git log --follow index2.html 来查看历史记录
+> 不小心误删后, 可以使用 git checkout HEAD -- index.html 恢复.
 
 ##### 查看暂存的文件
 - git ls-files --stage/-s
@@ -80,6 +69,15 @@
 - :w 将文件写入磁盘并保存
 - :q 退出编辑器, 回到命令行
 
+##### 重命名
+- git mv index.html index2.html
+> 将index.html重命名为index2.html. 
+> 重命名git log --follow index2.html 来查看历史记录
+
+##### 放弃更改
+- git checkout -- index.html
+- 其实就是放弃更改.
+
 ##### 标签
 - git tag init 0d7f482
 > 为某次提交创建一个tag. init是tag的名称, 可以是通常是某次上线或者其他重要节点. 
@@ -89,6 +87,7 @@
 > tag其实就是散列值的别名，一旦设置了tag之后，就可以通过git tag命令查看所有的tag.
 
 > 通过git show init 查看此次提交的内容(等同git show 0d7f482).
+
 
 ##### 分支
 - git checkout -b test master
